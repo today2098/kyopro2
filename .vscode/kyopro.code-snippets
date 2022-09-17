@@ -1,0 +1,209 @@
+{
+	// Place your algorithm2 ワークスペース snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"My template": {
+		"scope": "cpp",
+		"prefix": "main",
+		"body": [
+			"#include <bits/stdc++.h>",
+			"#define REP(i,n)   for(int i=0;i<(int)(n);++i)",
+			"#define FOR(i,l,r) for(int i=(int)(l);i<(int)(r);++i)",
+			"#define ALL(v)     (v).begin(),(v).end()",
+			"using ll  = long long;",
+			"using vi  = std::vector<int>;",
+			"using vvi = std::vector<vi>;",
+			"using pii = std::pair<int,int>;",
+			"using namespace std;",
+			"constexpr int       INF  = 1e9;",
+			"constexpr long long LINF = 1e18;",
+			"constexpr double    EPS  = 1e-10;",
+			"constexpr int       MOD  = 998'244'353;",
+			"constexpr int       MOD2 = 1e9+7;",
+			"",
+			"int main(){}"
+		],
+		"description": "My template"
+	},
+	"DEBUG": {
+		"scope": "cpp",
+		"prefix": "DEBUG",
+		"body": [
+			"#define DEBUG",
+			"#ifdef DEBUG",
+			"",
+			"#define debug(...) debug_internal(__LINE__, #__VA_ARGS__, __VA_ARGS__)",
+			"#define dline(a) dline_internal(__LINE__, #a, a);",
+			"",
+			"template <typename T, class... Args>",
+			"void debug_internal(int l, const char *context, T &&first, Args &&...args) {",
+			"    constexpr const char *open_brackets = (sizeof...(args) == 0 ? \"\" : \"(\");",
+			"    constexpr const char *close_brackets = (sizeof...(args) == 0 ? \"\" : \")\");",
+			"    std::cerr << \"[L\" << l << \"] \" << open_brackets << context << close_brackets << \": \"",
+			"              << open_brackets << std::forward<T>(first);",
+			"    ((std::cerr << \", \" << std::forward<Args>(args)), ...);",
+			"    std::cerr << close_brackets << std::endl;",
+			"}",
+			"",
+			"template <class Class>",
+			"void dline_internal(int l, const char *context, const Class &a) {",
+			"    std::cerr << \"[L\" << l << \"] \" << context << \": \";",
+			"    int cnt = 0;",
+			"    for(const auto &elem : a) std::cerr << (cnt++ == 0 ? \"\" : \" \") << elem;",
+			"    std::cerr << std::endl;",
+			"}",
+			"",
+			"#else",
+			"",
+			"#define debug(...) void(0)",
+			"#define dline(a) void(0)",
+			"",
+			"#endif"
+		],
+		"description": ""
+	},
+	"Timer": {
+		"scope": "cpp",
+		"prefix": "Timer",
+		"body": [
+			"class Timer {",
+			"    std::chrono::system_clock::time_point m_start;",
+			"",
+			"public:",
+			"    // constructor.",
+			"    Timer() { restart(); }",
+			"",
+			"    // 計測開始時間を保存する．",
+			"    void restart() { m_start = std::chrono::system_clock::now(); }",
+			"    // 経過時間を返す（ミリ秒単位）．",
+			"    double elapsed() const {",
+			"        auto now = std::chrono::system_clock::now();",
+			"        return std::chrono::duration_cast<std::chrono::milliseconds>(now - m_start).count();",
+			"    }",
+			"};",
+		],
+		"description": "処理時間計測"
+	},
+	"line": {
+		"scope": "cpp",
+		"prefix": "line",
+		"body": [
+			"template <class Class>",
+			"void line(const Class &a, std::string delim = \" \") {",
+			"    int cnt = 0;",
+			"    for(const auto &elem : a) std::cout << (cnt++ == 0 ? \"\" : delim) << elem;",
+			"    std::cout << std::endl;",
+			"}"
+		],
+		"description": "Print container"
+	},
+	"using r_priority_queue": {
+		"scope": "cpp",
+		"prefix": "using r_priority_queue",
+		"body": [
+			"template <typename Type>",
+			"using r_priority_queue = std::priority_queue<Type,vector<Type>,greater<Type> >;"
+		],
+		"description": ""
+	},
+	"using vt, vvt, vvvt": {
+		"scope": "cpp",
+		"prefix": "using vt, vvt, vvvt",
+		"body": [
+			"template<typename Type> using vt   = std::vector<Type>;",
+			"template<typename Type> using vvt  = std::vector<vt<Type> >;",
+			"template<typename Type> using vvvt = std::vector<vvt<Type> >;"
+		],
+		"description": ""
+	},
+	"Define dy[], dx[]": {
+		"scope": "cpp",
+		"prefix": "Define dy[], dx[]",
+		"body": [
+			"const int dy[] = {-1, 0, 0, 1};",
+			"const int dx[] = {0, -1, 1, 0};"
+		],
+		"description": "グリッドの4近傍"
+	},
+	"Define ddy[], ddx[]": {
+		"scope": "cpp",
+		"prefix": "Define ddy[], ddx[]",
+		"body": [
+			"const int ddy[8] = {-1, -1, -1, 0, 0, 1, 1, 1};",
+			"const int ddx[8] = {-1, 0, 1, -1, 1, -1, 0, 1};"
+		],
+		"description": "グリッドの8近傍"
+	},
+	"Define LazySegTree (RAQ, RMQ)": {
+		"scope": "cpp",
+		"prefix": "Define LazySegTree (RAQ, RMQ)",
+		"body": [
+			"using Monoid=${1:int};",
+			"using Action=${2:int};",
+			"const Monoid e=${3:INF};",
+			"const Action id=${4:0};",
+			"auto op=[&](Monoid a,Monoid b)->Monoid{return ${5:min(a,b)};};",
+			"auto action=[&](Monoid &a,Action d)->void{${6:a+=d};};",
+			"auto composition=[&](Action &d,Action f)->void{${7:d+=f};};",
+			"LazySegTree<Monoid,Action> tree(op,action,composition,e,id,${8:vector<int>(0,0)});"
+		],
+		"description": "区間加算，区間min取得"
+	},
+	"Define LazySegTree (RAQ, RSQ)": {
+		"scope": "cpp",
+		"prefix": "Define LazySegTree (RAQ, RSQ)",
+		"body": [
+			"using Monoid=${1:struct{",
+			"    ll val;",
+			"    int sz;",
+			"}};",
+			"using Action=${2:ll};",
+			"const Monoid e=${3:(Monoid){0,0}};",
+			"const Action id=${4:0};",
+			"const auto op=[&](Monoid a,Monoid b)->Monoid{return ${5:(Monoid){a.val+b.val,a.sz+b.sz}};};",
+			"const auto action=[&](Monoid &a,Action d)->void{${6:a.val+=d*a.sz};};",
+			"const auto composition=[&](Action &d,Action f)->void{${7:d+=f};};",
+			"LazySegTree<Monoid,Action> tree(op,action,composition,e,id,vector<Monoid>(${8:0},${9:(Monoid){0,1}}));"
+		],
+		"description": "区間加算，区間和取得"
+	},
+	"Define LazySegTree (RUQ, RMQ)": {
+		"scope": "cpp",
+		"prefix": "Define LazySegTree (RUQ, RMQ)",
+		"body": [
+			"using Monoid=${1:int};",
+			"using Action=${2:int};",
+			"const Monoid e=${3:INF};",
+			"const Action id=${4:INF};",
+			"auto op=[&](Monoid a,Monoid b)->Monoid{return ${5:min(a,b)};};",
+			"auto action=[&](Monoid &a,Action d)->void{${6:a=(d==id?a:d)};};",
+			"auto composition=[&](Action &d,Action f)->void{${7:d=(f==id?d:f)};};",
+			"LazySegTree<Monoid,Action> tree(op,action,composition,e,id,${8:0});"
+		],
+		"description": "区間更新，区間min取得"
+	},
+	"Define SegmentTree (RMQ)": {
+		"scope": "cpp",
+		"prefix": "Define SegmentTree (RMQ)",
+		"body": [
+			"using T=${1:int};",
+			"auto op=[](T a,T b)->T{return ${2:max(a,b)};};",
+			"const T e=${3:-INF};",
+			"SegmentTree<T> tree(op,e,${4:0});"
+		],
+		"description": ""
+	},
+}
