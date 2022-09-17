@@ -4,5 +4,8 @@
 			"path": ".."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"explorer.sortOrder": "type",
+		"workbench.colorTheme": "Visual Studio Dark - C++"
+	}
 }
